@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/sb-admin-2.min.css">
+    <!-- <link rel="stylesheet" href="css/soft-ui-dashboard.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <link rel="icon" href="images/logo.png">
+    <title>Destiny</title>
+</head>
+
+<body>
+    <!-- sidebarD -->
+    <div class="sidebarD">
+        <a href="index.html" class="logo">
+            <div class="bx">
+                <img src="images/logo.png">
+            </div>
+            <div class="logo-name"><span>DES</span>TINY</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="index.html"><i class='bx bxs-dashboard'></i>Tổng Quan</a></li>
+            <li>
+                <div class="analys"><i class='bx bx-analyse'></i>Thống kê</div>
+            </li>
+            <li class="ml-4 active"><a href="post_manament.html"><i class='bx bx-window-alt'></i>Bài đăng</a></li>
+            <li class="ml-4"><a href="user_manament.html"><i class='bx bx-group'></i>Người dùng</a></li>
+            <li><a href="#"><i class='bx bx-cog'></i>Cài đặt</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Đăng xuất
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- End of sidebarD -->
+
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggleD"></label>
+            <!-- <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a> -->
+            <a href="#" class="profile">
+                <img src="images/profile-1.png">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Thống kê</h1>
+                    <ul class="breadcrumbD">
+                        <li><a href="#">
+                                Thống kê
+                            </a></li>
+                        /
+                        <li><a href="#" class="active">Bài đăng</a></li>
+                    </ul>
+                </div>
+                <a href="#" class="report">
+                    <i class='bx bx-cloud-download'></i>
+                    <span>Download</span>
+                </a>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card mb-4 shadow">
+                        <div class="card-body p-4 ">
+                            <div class="row">
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative border-radius-lg shadow-img">
+                                            <a class="d-block">
+                                                <img src="images/product/home-decor-1.jpg" alt="img-blur-shadow"
+                                                    class="img-fluid border-radius-lg">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-1 pb-0">
+                                            <p class="text-gradient text-dark mb-2 text-sm">Project #2</p>
+                                            <a href="javascript:;">
+                                                <h5>
+                                                    Modern
+                                                </h5>
+                                            </a>
+                                            <p class="mb-4 text-sm">
+                                                As Uber works through a huge fan a
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <button type="button" class="btn btn-outline-primary">View
+                                                    Post</button>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="#" class="avatar rounded-circle">
+                                                        <img class="" alt="Image placeholder"
+                                                            src="images/users/dang.jpg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative border-radius-lg shadow-img">
+                                            <a class=" d-block">
+                                                <img src="images/product/home-decor-2.jpg" alt="img-blur-shadow"
+                                                    class="img-fluid shadow border-radius-lg">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-1 pb-0">
+                                            <p class="text-gradient text-dark mb-2 text-sm">Project #1</p>
+                                            <a href="javascript:;">
+                                                <h5>
+                                                    Scandinavian
+                                                </h5>
+                                            </a>
+                                            <p class="mb-4 text-sm">
+                                                Music is something thatnr own specific opinion
+                                                about.
+                                            </p>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <button type="button" class="btn btn-outline-primary">View
+                                                    Post</button>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="#" class="avatar avatar-xs rounded-circle">
+                                                        <img alt="Image placeholder" src="images/users/dan.jpg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative border-radius-lg shadow-img">
+                                            <a class="d-block">
+                                                <img src="images/product/home-decor-3.jpg" alt="img-blur-shadow"
+                                                    class="img-fluid shadow border-radius-lg">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-1 pb-0">
+                                            <p class="text-gradient text-dark mb-2 text-sm">Project #3</p>
+                                            <a href="javascript:;">
+                                                <h5>
+                                                    Minimalist
+                                                </h5>
+                                            </a>
+                                            <p class="mb-4 text-sm">
+                                                Different people have different taste, and various types of music.
+                                            </p>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <button type="button" class="btn btn-outline-primary">View
+                                                    Post</button>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="#" class="avatar avatar-xs rounded-circle">
+                                                        <img alt=" Image placeholder" src="images/users/vinh.jpg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+                                    <div class="card card-blog card-plain">
+                                        <div class="position-relative border-radius-lg shadow-img">
+                                            <a class="d-block">
+                                                <img src="images/product/home-decor-1.jpg" alt="img-blur-shadow"
+                                                    class="img-fluid shadow border-radius-lg">
+                                            </a>
+                                        </div>
+                                        <div class="card-body px-1 pb-0">
+                                            <p class="text-gradient text-dark mb-2 text-sm">Project #3</p>
+                                            <a href="javascript:;">
+                                                <h5>
+                                                    Minimalist
+                                                </h5>
+                                            </a>
+                                            <p class="mb-4 text-sm">
+                                                Different people have different taste, and various types of music.
+                                            </p>
+                                            <div class="d-flex align-items-center justify-content-between">
+                                                <button type="button" class="btn btn-outline-primary">View
+                                                    Post</button>
+                                                <div class="avatar-group mt-2">
+                                                    <a href="#" class="avatar avatar-xs rounded-circle">
+                                                        <img alt=" Image placeholder" src="images/users/vi.jpg">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <!-- Area Chart -->
+                <div class="col-lg-8">
+                    <div class="card shadow mb-4">
+                        <!-- Card Body -->
+                        <div class="card-body pt-1">
+                            <div class="header-chart">
+                                <h6 class="ml-2 mt-2 font-weight-bold">Earnings Overview</h6>
+                                <div class="">
+                                    <img src="images/logo.png">
+                                </div>
+                            </div>
+                            <div class="bg-gradient-dark border-radius-lg m-1">
+                                <div class="chart-area p-1">
+                                    <canvas id="myAreaChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Pie Chart -->
+                    <div class="mt-4">
+                        <!-- Card Body -->
+                        <div class="">
+                            <div class="chart-pie">
+                                <canvas id="myPieChart"></canvas>
+                            </div>
+                            <div class="mt-4 text-center small text-pie">
+                                <span class="mr-2">
+                                    <i class="fas fa-circle text-primary"></i> Direct
+                                </span>
+                                <span class="mr-2">
+                                    <i class="fas fa-circle text-success"></i> Social
+                                </span>
+                                <span class="mr-2">
+                                    <i class="fas fa-circle text-info"></i> Referral
+                                </span>
+                            </div>
+                        </div>
+                        <h5 class="mt-4 mb-3 font-weight-bold text-center text-pie">Top 3</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- DataTales Example -->
+                <div class="col-lg-12">
+                    <div class="card shadow mb-5 mt-2">
+                        <div class="card-body">
+                            <h5 class="ml-1 mt-2 mb-3 font-weight-bold">Danh sách</h5>
+                            <div class="table-responsive ml-1">
+                                <table class="table rwd-table" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>Position</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Start date</th>
+                                            <th>Salary</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td data-th="name">
+                                                <img src="images/profile-1.png">
+                                            </td>
+                                            <td data-th="name">John Doe</td>
+                                            <td data-th="name">System Architect</td>
+                                            <td data-th="name">Edinburgh</td>
+                                            <td data-th="name"><span class="status pending">Pending</span></td>
+                                            <td data-th="name">14-08-2023</td>
+                                            <td data-th="name">$320,800</td>
+                                            <td data-th="Edit"><a href="">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="name">
+                                                <img src="images/profile-1.png">
+                                            </td>
+                                            <td data-th="name">John Doe</td>
+                                            <td data-th="name">System Architect</td>
+                                            <td data-th="name">Edinburgh</td>
+                                            <td data-th="name"><span class="status completed">Pending</span></td>
+                                            <td data-th="name">14-08-2023</td>
+                                            <td data-th="name">$320,800</td>
+                                            <td data-th="Edit"><a href="">Edit</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="name">
+                                                <img src="images/profile-1.png">
+                                            </td>
+                                            <td data-th="name">John Doe</td>
+                                            <td data-th="name">System Architect</td>
+                                            <td data-th="name">Edinburgh</td>
+                                            <td data-th="name"><span class="status process">Pending</span></td>
+                                            <td data-th="name">14-08-2023</td>
+                                            <td data-th="name">$320,800</td>
+                                            <td data-th="Edit"><a href="">Edit</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/chart.js/Chart.min.js"></script>
+    <script src="js/datachart/post-chart-area.js"></script>
+    <script src="js/datachart/post-chart-pie.js"></script>
+
+
+    <!-- database script -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Page level plugins -->
+    <script src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+
+    <script src="js/database/Calldatatables.js"></script>
+</body>
+
+</html>
