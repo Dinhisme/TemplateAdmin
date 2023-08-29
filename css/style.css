@@ -23,15 +23,15 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: #a5a5a5;
+    background: var(--grey);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ffffff;
+    background: var(--grey);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #555555;
+    background: var(--primary);
 }
 
 .text-pink {
@@ -64,6 +64,26 @@ body.dark {
     --success: #29e833;
     --chart-bg: #4e033a;
     --shadow-dark: #ffffff21;
+}
+
+body.pink {
+    --primary: #da277b;
+}
+
+body.blue {
+    --primary: #1976D2;
+}
+
+body.green {
+    --primary: var(--success);
+}
+
+body.orange {
+    --primary: #f67f43;
+}
+
+body.cyan {
+    --primary: #02a2ae;
 }
 
 body {
@@ -380,7 +400,7 @@ body {
     transition: all 0.3s ease;
 }
 
-.content nav #theme-toggleD:checked+.theme-toggleD::before {
+.content nav #theme-toggle:checked+.theme-toggleD::before {
     left: calc(100% - (25px - 4px) - 2px);
 }
 
@@ -515,7 +535,10 @@ body {
         min-width: 340px;
     }
 
-
+    .col-sm-2 {
+        flex: 0 0 16.66667% !important;
+        max-width: 16.66667% !important;
+    }
 }
 
 /* new css */
@@ -567,8 +590,28 @@ label {
     border-radius: 0.75rem;
 }
 
+.bg-gradient-pink {
+    background-image: linear-gradient(310deg, #fff -50%, #da277b 100%);
+}
+
+.bg-gradient-blue {
+    background-image: linear-gradient(310deg, #fff -50%, #1976D2 100%);
+}
+
+.bg-gradient-green {
+    background-image: linear-gradient(310deg, #fff -50%, #02ae02 100%);
+}
+
+.bg-gradient-cyan {
+    background-image: linear-gradient(310deg, #fff -50%, #02a2ae 100%);
+}
+
 .bg-gradient-dark {
     background-image: linear-gradient(310deg, var(--chart-bg) 0%, #3A416F 100%);
+}
+
+.bg-gradient-orange {
+    background-image: linear-gradient(310deg, #fff -50%, #f67f43 100%);
 }
 
 .bg-gradient-endless {
@@ -771,4 +814,63 @@ table tr td .status.pending {
     font-family: "Titillium Web", Sans-serif;
     font-weight: 900;
     text-transform: uppercase;
+}
+
+
+/* setting */
+.setting .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: -3px;
+    background-color: var(--grey);
+    border-left: 3px solid var(--primary);
+    border-bottom-left-radius: 40px;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 99;
+}
+
+.setting .sidenav>a {
+    padding: 15px 8px 8px 15%;
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: block;
+    transition: 0.4s;
+}
+
+
+.setting .sidenav a:hover {
+    color: rgb(237, 13, 88);
+    text-shadow: 0px 1px 1px white;
+}
+
+.setting .sidenav .closebtn {
+    position: absolute;
+    top: -16px;
+    right: 10px;
+    font-size: 36px;
+    margin-left: 60px;
+    cursor: pointer;
+}
+
+.clickSetting {
+    cursor: pointer;
+}
+
+.clickSetting a:hover {
+    color: var(--dark) !important;
+}
+
+.border-radius-50 {
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.border-active {
+    border: 1px solid black !important;
 }

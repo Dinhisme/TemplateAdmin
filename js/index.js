@@ -1,5 +1,19 @@
+var i = 0;
+
+window.onload = () => {
+  if (window.innerWidth < 1000) {
+    sideBar.classList.add("closeD");
+  } else {
+    sideBar.classList.remove("closeD");
+  }
+  if (window.innerWidth > 576) {
+    searchBtnIcon.classList.replace("bx-x", "bx-search");
+    searchForm.classList.remove("show");
+  }
+};
+
 const sideLinks = document.querySelectorAll(
-  ".sidebarD .side-menu li a:not(.logout)"
+  ".sidebarD .side-menu li a:not(.logout):not(.clickSetting)"
 );
 
 sideLinks.forEach((item) => {
@@ -60,3 +74,69 @@ toggler.addEventListener("change", function () {
     document.body.classList.remove("dark");
   }
 });
+
+function openNav() {
+  i++;
+  document.getElementById("mySidenav").style.width = "270px";
+  if (i > 1) {
+    closeNav();
+    i = 0;
+  }
+}
+
+function closeNav() {
+  i = 0;
+  document.getElementById("mySidenav").style.width = "0px";
+}
+
+const mainColorLink = document.querySelectorAll(".choosemain div div");
+
+mainColorLink.forEach((item) => {
+  const li = item;
+  item.addEventListener("click", () => {
+    mainColorLink.forEach((i) => {
+      i.classList.remove("border-active");
+    });
+    li.classList.add("border-active");
+  });
+});
+
+function mainColorPink() {
+  document.body.classList.remove("blue");
+  document.body.classList.remove("green");
+  document.body.classList.remove("orange");
+  document.body.classList.remove("cyan");
+  document.body.classList.add("pink");
+}
+
+function mainColorBlue() {
+  document.body.classList.remove("pink");
+  document.body.classList.remove("green");
+  document.body.classList.remove("orange");
+  document.body.classList.remove("cyan");
+  document.body.classList.add("blue");
+}
+
+function mainColorGreen() {
+  document.body.classList.remove("blue");
+  document.body.classList.remove("pink");
+  document.body.classList.remove("orange");
+  document.body.classList.remove("cyan");
+  document.body.classList.add("green");
+}
+
+function mainColorOrange() {
+  document.body.classList.remove("blue");
+  document.body.classList.remove("green");
+  document.body.classList.remove("pink");
+  document.body.classList.remove("cyan");
+  document.body.classList.add("orange");
+}
+
+function mainColorCyan() {
+  document.body.classList.remove("blue");
+  document.body.classList.remove("green");
+  document.body.classList.remove("orange");
+  document.body.classList.remove("pink");
+  document.body.classList.add("cyan");
+}
