@@ -2153,7 +2153,7 @@ pre code {
 }
 
 .form-control:focus {
-    color: #6e707e;
+    /* color: #6e707e; */
     background-color: #fff;
     border-color: #bac8f3;
     outline: 0;
@@ -6218,7 +6218,7 @@ a.close.disabled {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1050;
+    z-index: 5000;
     display: none;
     width: 100%;
     height: 100%;
@@ -6229,7 +6229,7 @@ a.close.disabled {
 .modal-dialog {
     position: relative;
     width: auto;
-    margin: .5rem;
+    margin: 1rem 1rem;
     pointer-events: none
 }
 
@@ -6382,8 +6382,8 @@ a.close.disabled {
 
 @media (min-width:576px) {
     .modal-dialog {
-        max-width: 500px;
-        margin: 1.75rem auto
+        max-width: fit-content;
+        margin: 5rem auto;
     }
 
     .modal-dialog-scrollable {
