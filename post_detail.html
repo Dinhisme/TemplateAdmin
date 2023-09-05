@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/sb-admin-2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="icon" href="images/logo.png">
+    <title>Destiny</title>
+</head>
+
+<body>
+    <!-- sidebarD -->
+    <div class="sidebarD">
+        <a href="index.html" class="logo">
+            <div class="bx">
+                <img src="images/logo.png">
+            </div>
+            <div class="logo-name"><span>DES</span>TINY</div>
+        </a>
+        <ul class="side-menu">
+            <li><a href="index.html"><i class='bx bxs-dashboard'></i>Tổng Quan</a></li>
+            <li>
+                <div class="analys"><i class='bx bx-analyse'></i>Thống kê</div>
+            </li>
+            <li class="ml-4 active"><a href="post_manament.html"><i class='bx bx-window-alt'></i>Bài đăng</a></li>
+            <li class="ml-4"><a href="user_manament.html"><i class='bx bx-group'></i>Người dùng</a></li>
+            <li onclick="openNav();"><a class="clickSetting"><i class='bx bx-cog'></i>Cài đặt</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle'></i>
+                    Đăng xuất
+                </a>
+            </li>
+        </ul>
+        <div class="setting">
+            <div id="mySidenav" class="sidenav">
+                <a class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#!about">
+                    <img style="width: 80%; margin: 0 5%;" src="images/logo.png" alt="">
+                </a>
+                <div class="logo justify-content-center ml-2 mt-n5">
+                    <div class="logo-name"><span>DES</span>TINY</div>
+                </div>
+                <div class="ml-2">
+                    <h6 class="text-pie ml-2 mb-4">Màu sắc chính</h6>
+                    <div class="row ml-1 choosemain">
+                        <div class="row col-lg-12">
+                            <div onclick="setMainColor('pink');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-pink border-radius-50 border border-active">
+                                <span class="d-inline-block"></span>
+                            </div>
+                            <div onclick="setMainColor('blue');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-blue border-radius-50 border">
+                                <span class="d-inline-block"></span>
+                            </div>
+                            <div onclick="setMainColor('green');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-green border-radius-50 border"
+                                id="active-borderG">
+                                <span class="d-inline-block"></span>
+                            </div>
+                            <div onclick="setMainColor('orange');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-orange border-radius-50 border"
+                                id="active-borderO">
+                                <span class="d-inline-block"></span>
+                            </div>
+                            <div onclick="setMainColor('cyan');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-cyan border-radius-50 border"
+                                id="active-borderC">
+                                <span class="d-inline-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-pie ml-2 mb-4 mt-4">Ngôn ngữ</h6>
+                    <div class="row ml-1 mr-1">
+                        <div class="col-lg-6">
+                            <div class="bg-gradient-endless p-2 border-radius-xl text-center">
+                                <a href="" class="text-white">Tiếng Việt</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-gradient-dark p-2 border-radius-xl text-center">
+                                <a href="" class="text-white">Tiếng anh</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of sidebarD -->
+
+    <!-- Main Content -->
+    <div class="content" onclick="closeNav();">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <!-- <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div> -->
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggleD"></label>
+            <!-- <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a> -->
+            <a href="profile_admin.html" class="profile">
+                <img src="images/users/dang.jpg" alt="">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Chi tiết bài đăng</h1>
+                    <ul class="breadcrumbD ml-2">
+                        <li>
+                            Bài đăng của <a href="#" class="active font-weight-bold">Quốc Vinh</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container-postdetail">
+                <div class="card shadow">
+                    <div class="row ml-0 mr-0 col-lg-12 card pb-0 pb-4" style="flex-direction: unset;">
+                        <div class="col-lg-7 pt-4">
+                            <div class="picture-collage">
+                                <div class="picture-collage-row medium">
+                                    <div class="picture-collage-item">
+                                        <div class="photo-preview-wrap">
+                                            <div class="photo-preview">
+                                                <div class="photo-preview-image" style="
+                                        background: url('images/product/home-decor-1.jpg')
+                                          center center / cover no-repeat;
+                                      "></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="picture-collage-item">
+                                        <div class="photo-preview-wrap">
+                                            <div class="photo-preview">
+                                                <div class="photo-preview-image" style="
+                                        background: url('images/product/home-decor-2.jpg')
+                                          center center / cover no-repeat;
+                                      "></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="picture-collage-row">
+                                    <div class="picture-collage-item">
+                                        <div class="photo-preview-wrap">
+                                            <div class="photo-preview">
+                                                <div class="photo-preview-image" style="
+                                        background: url('images/product/home-decor-3.jpg') center
+                                          center / cover no-repeat;
+                                      "></div>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="picture-collage-item">
+                                        <div class="photo-preview-wrap">
+                                            <div class="photo-preview">
+                                                <div class="photo-preview-image" style="
+                                        background: url('images/product/home-decor-1.jpg') center
+                                          center / cover no-repeat;
+                                      "></div>
+                                            </div>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                    <div class="picture-collage-item">
+                                        <a class="picture-collage-item-overlay" href="">
+                                            <p class="picture-collage-item-overlay-text mb-0">
+                                                +1
+                                            </p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5">
+                            <div class="avatar-group row text-pie pl-3 pt-4">
+                                <a href="#" class="avatar rounded-circle">
+                                    <img class="" alt="Image placeholder" src="images/users/vinh.jpg">
+                                </a>
+                                <div class="ml-3" style="padding-top: 0.10rem  !important;">
+                                    <h5 style="font-weight: 600;">
+                                        Phùng Quốc Vinh
+                                    </h5>
+                                    <div class="row ml-0">
+                                        <div class="mt-n2">1 Ngày trước</div>
+                                        <i class='bx bx-world mt-n1 ml-3' style="font-size: 1rem;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pl-3 pt-3 text-pie" style="min-height: 60px;">
+                                Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                Ai quan tâm ib tui nha!!!
+                            </div>
+                            <hr class="border-primaryx mt-3 mb-2 p-0">
+                            <div class="pl-4 pr-4 text-pie" style="display: flex; justify-content: space-between;">
+                                <div class="row">
+                                    <i class='bx bxs-heart text-pink'></i>
+                                    <h6 class="mt-1 ml-1">3</h6>
+                                </div>
+                                <div class="row">
+                                    <h6 class="mt-1 mr-1">4</h6>
+                                    <i class='bx bx-comment'></i>
+                                    <h6 class="mt-1 ml-3 mr-1">3</h6>
+                                    <i class='bx bx-share'></i>
+                                </div>
+                            </div>
+                            <hr class="border-primaryx mt-1 mb-3 p-0">
+                            <div class="text-black comment-section pt-1 pb-3 pl-4 pr-1">
+                                <div class="user-comment d-flex text-pie pl-0 pt-1 pb-2">
+                                    <a href="#" class="avatar rounded-circle">
+                                        <img class="" alt="" src="images/users/sy.jpg">
+                                    </a>
+                                    <div class="ml-2 content-comment">
+                                        <h6>
+                                            Đoàn Hiệp Sỹ
+                                        </h6>
+                                        <div class="ml-0">
+                                            <div class="mt-n1">Tui liên hệ rồi á ní ơi, Check tn đi ạ !!</div>
+                                        </div>
+                                        <!-- <div class="font-weight-bold pt-1 reply-comment">
+                                            <a href="" class="text-pie">Phản hồi</a>
+                                        </div> -->
+                                        <div class="user-comment d-flex text-pie pl-0 pt-1">
+                                            <a href="#" class="avatar rounded-circle">
+                                                <img class="" alt="" src="images/users/sy.jpg">
+                                            </a>
+                                            <div class="ml-2 content-comment">
+                                                <h6>
+                                                    Đoàn Hiệp Sỹ
+                                                </h6>
+                                                <div class="ml-0">
+                                                    <div class="mt-n1">Rep tui cái bạn ơi !!
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="font-weight-bold pt-1 reply-comment">
+                                                    <a href="" class="text-pie">Phản hồi</a>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="user-comment d-flex text-pie pl-0 pt-1 pb-2">
+                                    <a href="#" class="avatar rounded-circle">
+                                        <img class="" alt="" src="images/users/dan.jpg">
+                                    </a>
+                                    <div class="ml-2 content-comment">
+                                        <h6>
+                                            Nguyễn Khánh Đan
+                                        </h6>
+                                        <div class="ml-0">
+                                            <div class="mt-n1">Còn không bác?</div>
+                                        </div>
+                                        <!-- <div class="font-weight-bold pt-1 reply-comment">
+                                            <a href="" class="text-pie">Phản hồi</a>
+                                        </div> -->
+                                    </div>
+                                </div>
+                                <div class="user-comment d-flex text-pie pl-0 pt-1 pb-2">
+                                    <a href="#" class="avatar rounded-circle">
+                                        <img class="" alt="" src="images/users/vi.jpg">
+                                    </a>
+                                    <div class="ml-2 content-comment">
+                                        <h6>
+                                            Lê Bích Vi
+                                        </h6>
+                                        <div class="ml-0">
+                                            <div class="mt-n1">Có free ship hong bạn ơi</div>
+                                        </div>
+                                        <!-- <div class="font-weight-bold pt-1 reply-comment">
+                                            <a href="" class="text-pie">Phản hồi</a>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/index.js"></script>
+
+</body>
+
+</html>
