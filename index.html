@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Destiny</title>
+    <!-- Icon -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/21dadeed10.js" crossorigin="anonymous"></script>
+    <!-- Css -->
     <link rel="stylesheet" href="css/sb-admin-2.min.css">
-    <!-- <link rel="stylesheet" href="css/soft-ui-dashboard.css"> -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
     <link rel="icon" href="images/logo.png">
 
 </head>
 
 <body>
-    <!-- sidebarD -->
     <div class="sidebarD">
         <a href="index.html" class="logo">
             <div class="bx">
@@ -23,23 +23,62 @@
             </div>
             <div class="logo-name"><span>DES</span>TINY</div>
         </a>
-        <ul class="side-menu">
+        <ul class="side-menu" id="accordionSidebar">
             <li class="active"><a href="index.html"><i class='bx bxs-dashboard'></i>Tổng Quan</a></li>
             <li>
-                <div class="analys"><i class='bx bx-analyse'></i>Thống kê</div>
+                <div class="analys"><i class='bx bx-window-alt'></i>Bài đăng</div>
             </li>
-            <li class="ml-4"><a href="post_manament.html"><i class='bx bx-window-alt'></i>Bài đăng</a></li>
-            <li class="ml-4"><a href="user_manament.html"><i class='bx bx-group'></i>Người dùng</a></li>
+            <li class="ml-4"><a href="post_manament.html"><i class='bx bx-analyse'></i>Thống kê</a></li>
+            <li class="ml-4"><a href="post_reportdetail.html"><i class='bx bx-comment-error'></i>Báo cáo</a></li>
+            <li>
+                <div class="analys"><i class='bx bx-group'></i>Người dùng</div>
+            </li>
+            <li class="ml-4"><a href="user_manament.html"><i class='bx bx-analyse'></i>Thống kê</a></li>
+            <li class="ml-4"><a href="user_reportdetail.html"><i class='bx bx-comment-error'></i>Báo cáo</a></li>
             <li onclick="openNav();"><a class="clickSetting"><i class='bx bx-cog'></i>Cài đặt</a></li>
         </ul>
         <ul class="side-menu">
             <li>
-                <a href="#" class="logout">
+                <a href="#" class="logout" data-toggle="modal" data-target="#logoutModal">
                     <i class='bx bx-log-out-circle'></i>
                     Đăng xuất
                 </a>
             </li>
         </ul>
+        <!-- logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content card bg-gradient-dark text-white p-3 dialog-logout"
+                    style="width: 50%; margin: 0 25%;">
+                    <div class="modal-header ">
+                        <h5 class="modal-title font-weight-bold" id="exampleModalLabel">ĐĂNG XUẤT
+                        </h5>
+                        <button class="close text-white" type="button" data-dismiss="modal" aria-label="Close"
+                            style="padding-top: 1.2rem;">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="profile-logo-heart mt-n4">
+                            <img src="images/logo.png" alt="" class="img-icon-dialog">
+                        </div>
+                        <div class="profile-title mt-0 mb-3">
+                            <div class="logo" style="height: 0 !important;">
+                                <h2 class="logo-name"><span class="text-white">DES</span>TINY</h2>
+                            </div>
+                        </div>
+                        <h5 class="text-center">Bạn có chắc muốn đăng xuất?</h5>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center ">
+                        <button class="btn btn-secondary mr-4" type="button" data-dismiss="modal"><i
+                                class="fa fa-ban mr-1"></i>Hủy bỏ</button>
+                        <a class="btn btn-danger" href="#"> <i class="fa fa-check"></i> Xác nhận</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- logout Modal -->
         <div class="setting">
             <div id="mySidenav" class="sidenav">
                 <a class="closebtn" onclick="closeNav()">&times;</a>
@@ -262,66 +301,7 @@
             </div>
 
             <div class="row mt-3">
-                <div class="col-lg-4 mb-4">
-                    <div class="card shadow">
-                        <div class="card-body p-3 ml-1">
-                            <h6 class="mt-2 mb-3">Lịch sử trò chuyện</h6>
-                            <ul class="list-group">
-                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                                    <div class="avatar mr-3">
-                                        <img src="images/users/dang.jpg" alt="kal" class="border-radius-lg shadow">
-                                    </div>
-                                    <div class="d-flex align-items-start flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Sophie B.</h6>
-                                        <p class="mb-0 text-xs">Hi! I need more information..</p>
-                                    </div>
-                                    <a class="btn btn-link pr-3 pl-0 mb-0 ml-auto" href="#">Reply</a>
-                                </li>
-                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                                    <div class="avatar mr-3">
-                                        <img src="images/users/sy.jpg" alt="kal" class="border-radius-lg shadow">
-                                    </div>
-                                    <div class="d-flex align-items-start flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Anne Marie</h6>
-                                        <p class="mb-0 text-xs">Awesome work, can you..</p>
-                                    </div>
-                                    <a class="btn btn-link pr-3 pl-0 mb-0 ml-auto" href="#">Reply</a>
-                                </li>
-                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                                    <div class="avatar mr-3">
-                                        <img src="images/users/vinh.jpg" alt="kal" class="border-radius-lg shadow">
-                                    </div>
-                                    <div class="d-flex align-items-start flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Ivanna</h6>
-                                        <p class="mb-0 text-xs">About files I can..</p>
-                                    </div>
-                                    <a class="btn btn-link pr-3 pl-0 mb-0 ml-auto" href="#">Reply</a>
-                                </li>
-                                <li class="list-group-item border-0 d-flex align-items-center px-0 mb-2">
-                                    <div class="avatar mr-3">
-                                        <img src="images/users/vi.jpg" alt="kal" class="border-radius-lg shadow">
-                                    </div>
-                                    <div class="d-flex align-items-start flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Peterson</h6>
-                                        <p class="mb-0 text-xs">Have a great afternoon..</p>
-                                    </div>
-                                    <a class="btn btn-link pr-3 pl-0 mb-0 ml-auto" href="#">Reply</a>
-                                </li>
-                                <li class="list-group-item border-0 d-flex align-items-center px-0">
-                                    <div class="avatar mr-3">
-                                        <img src="images/users/dan.jpg" alt="kal" class="border-radius-lg shadow">
-                                    </div>
-                                    <div class="d-flex align-items-start flex-column justify-content-center">
-                                        <h6 class="mb-0 text-sm">Nick Daniel</h6>
-                                        <p class="mb-0 text-xs">Hi! I need more information..</p>
-                                    </div>
-                                    <a class="btn btn-link pr-3 pl-0 mb-0 ml-auto" href="#">Reply</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-8 mb-5">
+                <div class="col-lg-12 mb-5">
                     <div class="card z-index-2 shadow">
                         <div class="card-body p-3 ">
                             <div class="ml-1 mt-2 mb-3">
@@ -345,6 +325,9 @@
     <script src="js/chart.js/chartjs.min.js"></script>
     <script src="js/datachart/index-chart-area.js"></script>
     <script src="js/datachart/index-chart-bar.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

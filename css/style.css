@@ -94,6 +94,10 @@ body {
     overflow-x: hidden;
 }
 
+.border-left-shine {
+    border-left: .25rem solid var(--dark) !important
+}
+
 .sidebarD {
     position: fixed;
     top: 0;
@@ -628,10 +632,7 @@ div.table-responsive>div.dataTables_wrapper>div.row {
     align-items: center;
 }
 
-.header-chart h6 {
-    width: 90%;
-}
-
+.header-chart h6,
 .header-chart h5 {
     width: 90%;
 }
@@ -667,12 +668,12 @@ table td {
     vertical-align: middle !important;
 }
 
-table tr td:first-child {
+/* table tr td:first-child {
     display: flex;
     align-items: center;
     grid-gap: 12px;
     padding-left: 6px;
-}
+} */
 
 table td img {
     width: 36px;
@@ -722,7 +723,7 @@ table tr td .status.pending {
 }
 
 .shadow-img {
-    box-shadow: 0 .125rem 1.75rem 0 var(--shadow-dark) !important
+    box-shadow: 0 .125rem 0.4rem 0 var(--shadow-dark) !important;
 }
 
 /* user */
@@ -902,7 +903,7 @@ table tr td .status.pending {
 }
 
 
-.form-control {
+.form-controlP {
     display: block;
     width: 100%;
     padding: 0.5rem 0.75rem;
@@ -916,7 +917,7 @@ table tr td .status.pending {
     border-radius: 0.9rem;
 }
 
-.form-control:focus {
+.form-controlP:focus {
     background-color: #fff;
     border-color: #bac8f3;
     outline: 0;
@@ -1300,6 +1301,14 @@ table tr td .status.pending {
         text-align: center;
     }
 
+    .carousel-inner {
+        padding: 0 !important;
+    }
+
+    .carousel-item>.p-3 {
+        padding: 0 !important;
+    }
+
 }
 
 
@@ -1419,4 +1428,115 @@ table tr td .status.pending {
     background-color: var(--light);
     border-radius: 2rem;
     border: none;
+}
+
+.infor-left {
+    border-bottom: 4px solid var(--dark);
+}
+
+.report-left {
+    border-top-left-radius: unset;
+    border-top-right-radius: unset;
+}
+
+
+/* post-report */
+@media (min-width: 768px) {
+
+    /* show 3 items */
+    .carousel-inner .active,
+    .carousel-inner .active+.carousel-item,
+    .carousel-inner .active+.carousel-item+.carousel-item {
+        display: block;
+    }
+
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item {
+        transition: none;
+    }
+
+    .carousel-inner .carousel-item-next,
+    .carousel-inner .carousel-item-prev {
+        position: relative;
+        transform: translate3d(0, 0, 0);
+    }
+
+    .carousel-inner .active.carousel-item+.carousel-item+.carousel-item+.carousel-item {
+        position: absolute;
+        top: 0;
+        right: -33.3333%;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* left or forward direction */
+    .active.carousel-item-left+.carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left+.carousel-item,
+    .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item,
+    .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item {
+        position: relative;
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+
+    /* farthest right hidden item must be abso position for animations */
+    .carousel-inner .carousel-item-prev.carousel-item-right {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        display: block;
+        visibility: visible;
+    }
+
+    /* right or prev direction */
+    .active.carousel-item-right+.carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right+.carousel-item,
+    .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item,
+    .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item {
+        position: relative;
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
+        display: block;
+        visibility: visible;
+    }
+
+    .btn-previous-postreport {
+        position: absolute;
+        top: 230px;
+        left: 10px;
+    }
+
+    .btn-next-postreport {
+        position: absolute;
+        top: 230px;
+        right: 10px;
+    }
+
+    .container-post-report {
+        width: 90%;
+        margin: 0 5%;
+    }
+}
+
+.img-post-report {
+    border-radius: 0;
+    height: 50px;
+}
+
+
+.modal-backdrop {
+    z-index: 999 !important;
+}
+
+.dialog-logout {
+    width: 50%;
+    margin: 0 25%;
+}
+
+.img-icon-dialog {
+    width: 50% !important;
+    margin: 0 25% !important;
 }

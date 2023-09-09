@@ -6751,7 +6751,8 @@ a.close.disabled {
     display: none;
     float: left;
     width: 100%;
-    margin-right: -100%;
+    /* margin-right: -100%; */
+    perspective: 1000px;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     transition: transform .6s ease-in-out

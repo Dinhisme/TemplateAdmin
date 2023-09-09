@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destiny</title>
+    <!-- Icon -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/21dadeed10.js" crossorigin="anonymous"></script>
+    <!-- Css -->
+    <link rel="stylesheet" href="css/sb-admin-2.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/datatables/dataTables.bootstrap4.min.css">
+
+    <link rel="icon" href="images/logo.png">
+</head>
+
+<body>
+    <div class="sidebarD">
+        <a href="index.html" class="logo">
+            <div class="bx">
+                <img src="images/logo.png">
+            </div>
+            <div class="logo-name"><span>DES</span>TINY</div>
+        </a>
+        <ul class="side-menu" id="accordionSidebar">
+            <li><a href="index.html"><i class='bx bxs-dashboard'></i>Tổng Quan</a></li>
+            <li>
+                <div class="analys"><i class='bx bx-window-alt'></i>Bài đăng</div>
+            </li>
+            <li class="ml-4"><a href="post_manament.html"><i class='bx bx-analyse'></i>Thống kê</a></li>
+            <li class="ml-4 active"><a href="post_reportdetail.html"><i class='bx bx-comment-error'></i>Báo cáo</a></li>
+            <li>
+                <div class="analys"><i class='bx bx-group'></i>Người dùng</div>
+            </li>
+            <li class="ml-4"><a href="user_manament.html"><i class='bx bx-analyse'></i>Thống kê</a></li>
+            <li class="ml-4"><a href="user_reportdetail.html"><i class='bx bx-comment-error'></i>Báo cáo</a></li>
+            <li onclick="openNav();"><a class="clickSetting"><i class='bx bx-cog'></i>Cài đặt</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout" data-toggle="modal" data-target="#logoutModal">
+                    <i class='bx bx-log-out-circle'></i>
+                    Đăng xuất
+                </a>
+            </li>
+        </ul>
+        <!-- logout Modal-->
+        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content card bg-gradient-dark text-white p-3 dialog-logout"
+                    style="width: 50%; margin: 0 25%;">
+                    <div class="modal-header ">
+                        <h5 class="modal-title font-weight-bold" id="exampleModalLabel">ĐĂNG XUẤT
+                        </h5>
+                        <button class="close text-white" type="button" data-dismiss="modal" aria-label="Close"
+                            style="padding-top: 1.2rem;">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="profile-logo-heart mt-n4">
+                            <img src="images/logo.png" alt="" class="img-icon-dialog">
+                        </div>
+                        <div class="profile-title mt-0 mb-3">
+                            <div class="logo" style="height: 0 !important;">
+                                <h2 class="logo-name"><span class="text-white">DES</span>TINY</h2>
+                            </div>
+                        </div>
+                        <h5 class="text-center">Bạn có chắc muốn đăng xuất?</h5>
+                    </div>
+                    <div class="modal-footer d-flex justify-content-center ">
+                        <button class="btn btn-secondary mr-4" type="button" data-dismiss="modal"><i
+                                class="fa fa-ban mr-1"></i>Hủy bỏ</button>
+                        <a class="btn btn-danger" href="#"> <i class="fa fa-check"></i> Xác nhận</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- logout Modal -->
+        <div class="setting">
+            <div id="mySidenav" class="sidenav">
+                <a class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#!about">
+                    <img style="width: 80%; margin: 0 5%;" src="images/logo.png" alt="">
+                </a>
+                <div class="logo justify-content-center ml-2 mt-n5">
+                    <div class="logo-name"><span>DES</span>TINY</div>
+                </div>
+                <div class="ml-2">
+                    <h6 class="text-pie ml-2 mb-4">Màu sắc chính</h6>
+                    <div class="row ml-1 choosemain">
+                        <div class="row col-lg-12">
+                            <div onclick="setMainColor('pink');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-pink border-radius-50 border border-active">
+                                <span class="d-inline-block"></span>
+                            </div>
+                            <div onclick="setMainColor('blue');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-blue border-radius-50 border">
+                                <span class="d-inline-block"></span>
+                            </div>
+                            <div onclick="setMainColor('green');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-green border-radius-50 border"
+                                id="active-borderG">
+                                <span class="d-inline-block"></span>
+                            </div>
+                            <div onclick="setMainColor('orange');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-orange border-radius-50 border"
+                                id="active-borderO">
+                                <span class="d-inline-block"></span>
+                            </div>
+                            <div onclick="setMainColor('cyan');"
+                                class="col-lg-1 col-sm-1 offset-1 bg-gradient-cyan border-radius-50 border"
+                                id="active-borderC">
+                                <span class="d-inline-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <h6 class="text-pie ml-2 mb-4 mt-4">Ngôn ngữ</h6>
+                    <div class="row ml-1 mr-1">
+                        <div class="col-lg-6">
+                            <div class="bg-gradient-endless p-2 border-radius-xl text-center">
+                                <a href="" class="text-white">Tiếng Việt</a>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="bg-gradient-dark p-2 border-radius-xl text-center">
+                                <a href="" class="text-white">Tiếng anh</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of sidebarD -->
+
+    <!-- Main Content -->
+    <div class="content" onclick="closeNav();">
+        <!-- Navbar -->
+        <nav>
+            <i class='bx bx-menu'></i>
+            <form action="#">
+                <!-- <div class="form-input">
+                    <input type="search" placeholder="Search...">
+                    <button class="search-btn" type="submit"><i class='bx bx-search'></i></button>
+                </div> -->
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggleD"></label>
+            <!-- <a href="#" class="notif">
+                <i class='bx bx-bell'></i>
+                <span class="count">12</span>
+            </a> -->
+            <a href="profile_admin.html" class="profile">
+                <img src="images/users/dang.jpg" alt="">
+            </a>
+        </nav>
+
+        <!-- End of Navbar -->
+
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Bài đăng</h1>
+                    <ul class="breadcrumbD">
+                        /
+                        <li><a href="#" class="active">Báo cáo</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row justify-content-center container-post-report">
+                <!-- New user (Monthly) Card Example -->
+                <div class="col-xl-4 mb-3">
+                    <div class="card border-left-danger shadow">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2 ">
+                                    <div class="font-weight-bold text-danger text-uppercase mb-2">
+                                        <div>TỔNG SỐ BÀI VIẾT BỊ BÁO CÁO (HÔM NAY)</div>
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <div>100 <span class="text-success text-sm ml-2">+15%</span></div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar-day fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- New user (Monthly) Card Example -->
+                <div class="col-xl-4 mb-3">
+                    <div class="card border-left-warning shadow">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2 ">
+                                    <div class="font-weight-bold text-warning text-uppercase mb-2">
+                                        <div>TỔNG SỐ BÀI VIẾT BỊ BÁO CÁO (THÁNG NÀY)</div>
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <div>100 <span class="text-success text-sm ml-2">+15%</span></div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar-week fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 mb-3">
+                    <div class="card border-left-shine shadow">
+                        <div class="card-body">
+                            <div class="row no-gutters align-items-center">
+                                <div class="col mr-2 ">
+                                    <div class="font-weight-bold text-pie text-uppercase mb-2">
+                                        <div>TỔNG SỐ BÀI VIẾT BỊ BÁO CÁO (TRONG NĂM)</div>
+                                    </div>
+                                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                        <div>100 <span class="text-success text-sm ml-2">+15%</span></div>
+                                    </div>
+                                </div>
+                                <div class="col-auto">
+                                    <i class="fas fa-calendar fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-lg-12 profile-logo-heart">
+                    <img src="images/logo.png" alt="">
+                </div>
+                <div class="col-lg-12 profile-title mt-3">
+                    <div class="logo" style="height: 0 !important;">
+                        <h2 class="logo-name"><span>DES</span>TINY</h2>
+                    </div>
+                </div>
+            </div>
+            <div id="pagi-post-report">
+                <div class="d-flex justify-content-between mt-2 pl-1 container-post-report text-pink">
+                    <h4>Danh sách các bài viết bị tố cáo (Hôm nay) </h4>
+                    <i class="bx bx-table text-pink text-md pr-1" onclick="openTable()" role="button"></i>
+                </div>
+                <div class="position-relative">
+                    <div id="myCarousel" class="carousel slide card shadow container-post-report mb-4"
+                        data-ride="carousel">
+                        <div class="carousel-inner mt-3">
+                            <div class="carousel-item col-md-4 mb-1 active card-postreport">
+                                <div class="card p-3">
+                                    <div class="border-radius-lg shadow-img">
+                                        <a href="post_detail.html" class="d-block">
+                                            <img src="images/product/home-decor-1.jpg" alt="img-blur-shadow"
+                                                class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <p class="text-gradient text-dark mb-2 text-sm">Ghế sofa</p>
+                                        <a href="user_detail.html">
+                                            <h5>
+                                                Phùng Quốc Vinh
+                                            </h5>
+                                        </a>
+                                        <p class="mb-4 text-sm">
+                                            Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                            Ai quan tâm ib tui nha!!!
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="post_detail.html" type="button" class="btn btn-outline-primary">Xem
+                                                chi
+                                                tiết</a>
+                                            <div class="avatar-group mt-2">
+                                                <a href="user_detail.html" class="avatar avatar-xs rounded-circle">
+                                                    <img alt=" Image placeholder" src="images/users/vinh.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-md-4 mb-1">
+                                <div class="card p-3">
+                                    <div class="border-radius-lg shadow-img">
+                                        <a href="post_detail.html" class="d-block">
+                                            <img src="images/product/home-decor-2.jpg" alt="img-blur-shadow"
+                                                class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <p class="text-gradient text-dark mb-2 text-sm">Bộ chăn gối</p>
+                                        <a href="user_detail.html">
+                                            <h5>
+                                                Nguyễn Khánh Đan
+                                            </h5>
+                                        </a>
+                                        <p class="mb-4 text-sm">
+                                            Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                            Ai quan tâm ib tui nha!!!
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="post_detail.html" type="button" class="btn btn-outline-primary">Xem
+                                                chi
+                                                tiết</a>
+                                            <div class="avatar-group mt-2">
+                                                <a href="user_detail.html" class="avatar avatar-xs rounded-circle">
+                                                    <img alt=" Image placeholder" src="images/users/dan.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-md-4 mb-1">
+                                <div class="card p-3">
+                                    <div class="border-radius-lg shadow-img">
+                                        <a href="post_detail.html" class="d-block">
+                                            <img src="images/product/home-decor-3.jpg" alt="img-blur-shadow"
+                                                class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <p class="text-gradient text-dark mb-2 text-sm">Ghế ngồi</p>
+                                        <a href="user_detail.html">
+                                            <h5>
+                                                Đoàn Hiệp Sỹ
+                                            </h5>
+                                        </a>
+                                        <p class="mb-4 text-sm">
+                                            Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                            Ai quan tâm ib tui nha!!!
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="post_detail.html" type="button" class="btn btn-outline-primary">Xem
+                                                chi
+                                                tiết</a>
+                                            <div class="avatar-group mt-2">
+                                                <a href="user_detail.html" class="avatar avatar-xs rounded-circle">
+                                                    <img alt=" Image placeholder" src="images/users/sy.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-md-4 mb-1">
+                                <div class="card p-3">
+                                    <div class="border-radius-lg shadow-img">
+                                        <a href="post_detail.html" class="d-block">
+                                            <img src="images/product/home-decor-1.jpg" alt="img-blur-shadow"
+                                                class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <p class="text-gradient text-dark mb-2 text-sm">Đèn ngủ</p>
+                                        <a href="user_detail.html">
+                                            <h5>
+                                                Lê Bích Vi
+                                            </h5>
+                                        </a>
+                                        <p class="mb-4 text-sm">
+                                            Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                            Ai quan tâm ib tui nha!!!
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="post_detail.html" type="button" class="btn btn-outline-primary">Xem
+                                                chi
+                                                tiết</a>
+                                            <div class="avatar-group mt-2">
+                                                <a href="user_detail.html" class="avatar avatar-xs rounded-circle">
+                                                    <img alt=" Image placeholder" src="images/users/vi.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-md-4 mb-1">
+                                <div class="card p-3">
+                                    <div class="border-radius-lg shadow-img">
+                                        <a href="post_detail.html" class="d-block">
+                                            <img src="images/product/home-decor-1.jpg" alt="img-blur-shadow"
+                                                class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <p class="text-gradient text-dark mb-2 text-sm">Đèn ngủ</p>
+                                        <a href="user_detail.html">
+                                            <h5>
+                                                Lê Bích Vi
+                                            </h5>
+                                        </a>
+                                        <p class="mb-4 text-sm">
+                                            Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                            Ai quan tâm ib tui nha!!!
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="post_detail.html" type="button" class="btn btn-outline-primary">Xem
+                                                chi
+                                                tiết</a>
+                                            <div class="avatar-group mt-2">
+                                                <a href="user_detail.html" class="avatar avatar-xs rounded-circle">
+                                                    <img alt=" Image placeholder" src="images/users/vi.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-md-4 mb-1">
+                                <div class="card p-3">
+                                    <div class="border-radius-lg shadow-img">
+                                        <a href="post_detail.html" class="d-block">
+                                            <img src="images/product/home-decor-1.jpg" alt="img-blur-shadow"
+                                                class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <p class="text-gradient text-dark mb-2 text-sm">Đèn ngủ</p>
+                                        <a href="user_detail.html">
+                                            <h5>
+                                                Lê Bích Vi
+                                            </h5>
+                                        </a>
+                                        <p class="mb-4 text-sm">
+                                            Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                            Ai quan tâm ib tui nha!!!
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="post_detail.html" type="button" class="btn btn-outline-primary">Xem
+                                                chi
+                                                tiết</a>
+                                            <div class="avatar-group mt-2">
+                                                <a href="user_detail.html" class="avatar avatar-xs rounded-circle">
+                                                    <img alt=" Image placeholder" src="images/users/vi.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-md-4 mb-1">
+                                <div class="card p-3">
+                                    <div class="border-radius-lg shadow-img">
+                                        <a href="post_detail.html" class="d-block">
+                                            <img src="images/product/home-decor-1.jpg" alt="img-blur-shadow"
+                                                class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <p class="text-gradient text-dark mb-2 text-sm">Đèn ngủ</p>
+                                        <a href="user_detail.html">
+                                            <h5>
+                                                Lê Bích Vi
+                                            </h5>
+                                        </a>
+                                        <p class="mb-4 text-sm">
+                                            Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                            Ai quan tâm ib tui nha!!!
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="post_detail.html" type="button" class="btn btn-outline-primary">Xem
+                                                chi
+                                                tiết</a>
+                                            <div class="avatar-group mt-2">
+                                                <a href="user_detail.html" class="avatar avatar-xs rounded-circle">
+                                                    <img alt=" Image placeholder" src="images/users/vi.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item col-md-4 mb-1">
+                                <div class="card p-3">
+                                    <div class="border-radius-lg shadow-img">
+                                        <a href="post_detail.html" class="d-block">
+                                            <img src="images/product/home-decor-1.jpg" alt="img-blur-shadow"
+                                                class="img-fluid border-radius-lg">
+                                        </a>
+                                    </div>
+                                    <div class="card-body px-1 pb-0">
+                                        <p class="text-gradient text-dark mb-2 text-sm">Đèn ngủ</p>
+                                        <a href="user_detail.html">
+                                            <h5>
+                                                Lê Bích Vi
+                                            </h5>
+                                        </a>
+                                        <p class="mb-4 text-sm">
+                                            Tui có mấy món đồ không sài nữa muốn tặng cho bạn nào cần nè,
+                                            Ai quan tâm ib tui nha!!!
+                                        </p>
+                                        <div class="d-flex align-items-center justify-content-between">
+                                            <a href="post_detail.html" type="button" class="btn btn-outline-primary">Xem
+                                                chi
+                                                tiết</a>
+                                            <div class="avatar-group mt-2">
+                                                <a href="user_detail.html" class="avatar avatar-xs rounded-circle">
+                                                    <img alt=" Image placeholder" src="images/users/vi.jpg">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center button-reportdetail">
+                        <a class="text-pink btn-previous-postreport" href="#myCarousel" role="button" data-slide="prev">
+                            <span class="bx bx-chevron-left" aria-hidden="true" style="font-size: 3rem;"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class=" text-pink btn-next-postreport" href="#myCarousel" role="button" data-slide="next">
+                            <span class="bx bx-chevron-right" aria-hidden="true" style="font-size: 3rem;"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden" id="table-post-report">
+                <div class="d-flex justify-content-between mt-2 pl-1 container-post-report text-pink">
+                    <h4>Danh sách tất cả các bài viết bị tốt cáo</h4>
+                    <i class="bx bx-card text-pink text-md pr-1" onclick="openTable()" role="button"></i>
+                </div>
+                <div class="container-post-report">
+                    <div class="card shadow mb-5 mt-0">
+                        <div class="card-body">
+                            <h5 class="ml-1 mt-2 mb-3 font-weight-bold">Danh sách</h5>
+                            <div class="table-responsive ml-1">
+                                <table class="table rwd-table" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Hình ảnh</th>
+                                            <th>Người dùng</th>
+                                            <th>Nội dung</th>
+                                            <th>Số lượng tố cáo</th>
+                                            <th>Ngày đăng</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Hình ảnh</th>
+                                            <th>Người dùng</th>
+                                            <th>Nội dung</th>
+                                            <th>Số lượng tố cáo</th>
+                                            <th>Ngày đăng</th>
+                                            <th></th>
+                                        </tr>
+                                    </tfoot>
+                                    <tbody>
+                                        <tr>
+                                            <td data-th="Hình ảnh">
+                                                <img class="w-100 img-post-report" src="img/home-decor-1.jpg">
+                                            </td>
+                                            <td data-th="Người dùng">Phùng Quốc Vinh</td>
+                                            <td class="text-substring" data-th="Nội dung">Tui có mấy món đồ không sài
+                                                nữa
+                                                muốn tặng
+                                                cho bạn nào
+                                                cần nè,
+                                                Ai quan tâm ib tui nha!!!</td>
+                                            <td data-th="Số lượng báo cáo" class="pl-5"><span
+                                                    class="status pending">3</span></td>
+                                            <td data-th="Ngày đăng">6-8-2023</td>
+                                            <td data-th="Xem thêm"><a href="post_detail.html">Xem chi tiết</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="Hình ảnh">
+                                                <img class="w-100 img-post-report" src="img/home-decor-2.jpg">
+                                            </td>
+                                            <td data-th="Người dùng">Đoàn Hiệp Sỹ</td>
+                                            <td class="text-substring" data-th="Nội dung">Tui có mấy món đồ không sài
+                                                nữa
+                                                muốn tặng
+                                                cho bạn nào
+                                                cần nè,
+                                                Ai quan tâm ib tui nha!!!</td>
+                                            <td data-th="Số lượng báo cáo" class="pl-5"><span
+                                                    class="status completed">2</span></td>
+                                            <td data-th="Ngày đăng">6-8-2023</td>
+                                            <td data-th="Xem thêm"><a href="post_detail.html">Xem chi tiết</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="Hình ảnh">
+                                                <img class="w-100 img-post-report" src="img/home-decor-3.jpg">
+                                            </td>
+                                            <td data-th="Người dùng">Lê Bích Vi</td>
+                                            <td class="text-substring" data-th="Nội dung">Tui có mấy món đồ không sài
+                                                nữa
+                                                muốn tặng
+                                                cho bạn nào
+                                                cần nè,
+                                                Ai quan tâm ib tui nha!!!</td>
+                                            <td data-th="Số lượng báo cáo" class="pl-5"><span
+                                                    class="status process">4</span></td>
+                                            <td data-th="Ngày đăng">6-8-2023</td>
+                                            <td data-th="Xem thêm"><a href="post_detail.html">Xem chi tiết</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td data-th="Hình ảnh">
+                                                <img class="w-100 img-post-report" src="img/home-decor-3.jpg">
+                                            </td>
+                                            <td data-th="Người dùng">Nguyễn Khánh Đan</td>
+                                            <td class="text-substring" data-th="Nội dung">Tui có mấy món đồ không sài
+                                                nữa
+                                                muốn tặng
+                                                cho bạn nào
+                                                cần nè,
+                                                Ai quan tâm ib tui nha!!!</td>
+                                            <td data-th="Số lượng báo cáo" class="pl-5"><span
+                                                    class="status process">4</span></td>
+                                            <td data-th="Ngày đăng">6-8-2023</td>
+                                            <td data-th="Xem thêm"><a href="post_detail.html">Xem chi tiết</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/index.js"></script>
+    <script src="js/checktext.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- database script -->
+    <!-- Page level plugins -->
+    <script src="js/database/datatables/jquery.dataTables.min.js"></script>
+    <script src="js/database/datatables/dataTables.bootstrap4.js"></script>
+
+    <script src="js/database/Calldatatables.js"></script>
+
+    <!-- cai js nay phai dat duoi cung -->
+    <script src="js/carouselcheck.js"></script>
+
+</body>
+
+</html>
